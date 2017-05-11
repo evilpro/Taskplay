@@ -1,4 +1,5 @@
 # Taskplay
+[[https://raw.githubusercontent.com/evilpro/Taskplay/master/Taskplay.png|alt=Taskplay Screenshot]]
 Taskplay is a small utility which adds media playback controls to the Windows System Tray
 
 ## Info
