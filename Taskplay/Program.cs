@@ -30,24 +30,25 @@ namespace Taskplay
             //Add the context menu items to the context menu
             contextMenu.MenuItems.Add(contextItemSettings);
             contextMenu.MenuItems.Add(contextItemExit);
-            //Setup previousIcon
-            previousIcon.Icon = Properties.Resources.Backward;
-            previousIcon.Text = "Previous";
-            previousIcon.Visible = true;
-            previousIcon.MouseClick += new MouseEventHandler(previousIcon_MouseClick);
-            previousIcon.ContextMenu = contextMenu;
-            ///Setup playIcon
-            playIcon.Icon = Properties.Resources.Play;
-            playIcon.Text = "Play / Pause";
-            playIcon.Visible = true;
-            playIcon.MouseClick += new MouseEventHandler(playIcon_MouseClick);
-            playIcon.ContextMenu = contextMenu;
             //Setup nextIcon
             nextIcon.Icon = Properties.Resources.Forward;
             nextIcon.Text = "Next";
             nextIcon.Visible = true;
             nextIcon.MouseClick += new MouseEventHandler(nextIcon_MouseClick);
             nextIcon.ContextMenu = contextMenu;
+            //Setup playIcon
+            playIcon.Icon = Properties.Resources.Play;
+            playIcon.Text = "Play / Pause";
+            playIcon.Visible = true;
+            playIcon.MouseClick += new MouseEventHandler(playIcon_MouseClick);
+            playIcon.ContextMenu = contextMenu;
+            //Setup previousIcon
+            previousIcon.Icon = Properties.Resources.Backward;
+            previousIcon.Text = "Previous";
+            previousIcon.Visible = true;
+            previousIcon.MouseClick += new MouseEventHandler(previousIcon_MouseClick);
+            previousIcon.ContextMenu = contextMenu;
+
             //Launch
             Application.Run();
         }
