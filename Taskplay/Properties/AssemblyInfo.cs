@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Taskplay")]
 [assembly: AssemblyDescription("Taskplay is a small utility which adds media playback controls to the Windows System Tray")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("evil_pro")]
 [assembly: AssemblyProduct("Taskplay")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
