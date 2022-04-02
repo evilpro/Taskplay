@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
+            this.checkBoxDarkMode = new System.Windows.Forms.CheckBox();
             this.checkBoxAutorun = new System.Windows.Forms.CheckBox();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
             this.linkLabelGitHub = new System.Windows.Forms.LinkLabel();
@@ -38,7 +39,6 @@
             this.labelSuggestions = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.labelTaskplay = new System.Windows.Forms.Label();
-            this.buttonApply = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
@@ -60,21 +60,32 @@
             // 
             // tabPageGeneral
             // 
+            this.tabPageGeneral.Controls.Add(this.checkBoxDarkMode);
             this.tabPageGeneral.Controls.Add(this.checkBoxAutorun);
-            this.tabPageGeneral.Location = new System.Drawing.Point(4, 22);
+            this.tabPageGeneral.Location = new System.Drawing.Point(4, 32);
             this.tabPageGeneral.Name = "tabPageGeneral";
             this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGeneral.Size = new System.Drawing.Size(297, 156);
+            this.tabPageGeneral.Size = new System.Drawing.Size(297, 146);
             this.tabPageGeneral.TabIndex = 0;
             this.tabPageGeneral.Text = "General";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDarkMode
+            // 
+            this.checkBoxDarkMode.AutoSize = true;
+            this.checkBoxDarkMode.Location = new System.Drawing.Point(6, 39);
+            this.checkBoxDarkMode.Name = "checkBoxDarkMode";
+            this.checkBoxDarkMode.Size = new System.Drawing.Size(120, 27);
+            this.checkBoxDarkMode.TabIndex = 1;
+            this.checkBoxDarkMode.Text = "Dark mode";
+            this.checkBoxDarkMode.UseVisualStyleBackColor = true;
             // 
             // checkBoxAutorun
             // 
             this.checkBoxAutorun.AutoSize = true;
             this.checkBoxAutorun.Location = new System.Drawing.Point(6, 6);
             this.checkBoxAutorun.Name = "checkBoxAutorun";
-            this.checkBoxAutorun.Size = new System.Drawing.Size(173, 17);
+            this.checkBoxAutorun.Size = new System.Drawing.Size(249, 27);
             this.checkBoxAutorun.TabIndex = 0;
             this.checkBoxAutorun.Text = "Start Taskplay with Windows";
             this.checkBoxAutorun.UseVisualStyleBackColor = true;
@@ -86,10 +97,10 @@
             this.tabPageAbout.Controls.Add(this.labelSuggestions);
             this.tabPageAbout.Controls.Add(this.labelVersion);
             this.tabPageAbout.Controls.Add(this.labelTaskplay);
-            this.tabPageAbout.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAbout.Location = new System.Drawing.Point(4, 32);
             this.tabPageAbout.Name = "tabPageAbout";
             this.tabPageAbout.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAbout.Size = new System.Drawing.Size(297, 156);
+            this.tabPageAbout.Size = new System.Drawing.Size(297, 146);
             this.tabPageAbout.TabIndex = 1;
             this.tabPageAbout.Text = "About";
             this.tabPageAbout.UseVisualStyleBackColor = true;
@@ -101,7 +112,7 @@
             this.linkLabelGitHub.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelGitHub.Location = new System.Drawing.Point(214, 134);
             this.linkLabelGitHub.Name = "linkLabelGitHub";
-            this.linkLabelGitHub.Size = new System.Drawing.Size(44, 13);
+            this.linkLabelGitHub.Size = new System.Drawing.Size(64, 23);
             this.linkLabelGitHub.TabIndex = 8;
             this.linkLabelGitHub.TabStop = true;
             this.linkLabelGitHub.Text = "GitHub";
@@ -113,7 +124,7 @@
             this.labelContribute.AutoSize = true;
             this.labelContribute.Location = new System.Drawing.Point(6, 134);
             this.labelContribute.Name = "labelContribute";
-            this.labelContribute.Size = new System.Drawing.Size(215, 13);
+            this.labelContribute.Size = new System.Drawing.Size(318, 23);
             this.labelContribute.TabIndex = 7;
             this.labelContribute.Text = "Feel free to contribute to the project on ";
             // 
@@ -123,7 +134,7 @@
             this.labelSuggestions.AutoSize = true;
             this.labelSuggestions.Location = new System.Drawing.Point(6, 117);
             this.labelSuggestions.Name = "labelSuggestions";
-            this.labelSuggestions.Size = new System.Drawing.Size(183, 13);
+            this.labelSuggestions.Size = new System.Drawing.Size(268, 23);
             this.labelSuggestions.TabIndex = 5;
             this.labelSuggestions.Text = "Got a suggestion or found a bug?";
             // 
@@ -132,7 +143,7 @@
             this.labelVersion.AutoSize = true;
             this.labelVersion.Location = new System.Drawing.Point(6, 24);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(60, 13);
+            this.labelVersion.Size = new System.Drawing.Size(90, 23);
             this.labelVersion.TabIndex = 4;
             this.labelVersion.Text = "Version {0}";
             // 
@@ -141,24 +152,14 @@
             this.labelTaskplay.AutoSize = true;
             this.labelTaskplay.Location = new System.Drawing.Point(6, 7);
             this.labelTaskplay.Name = "labelTaskplay";
-            this.labelTaskplay.Size = new System.Drawing.Size(49, 13);
+            this.labelTaskplay.Size = new System.Drawing.Size(72, 23);
             this.labelTaskplay.TabIndex = 2;
             this.labelTaskplay.Text = "Taskplay";
-            // 
-            // buttonApply
-            // 
-            this.buttonApply.Location = new System.Drawing.Point(235, 192);
-            this.buttonApply.Name = "buttonApply";
-            this.buttonApply.Size = new System.Drawing.Size(75, 23);
-            this.buttonApply.TabIndex = 1;
-            this.buttonApply.Text = "Apply";
-            this.buttonApply.UseVisualStyleBackColor = true;
-            this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
             // 
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(154, 192);
+            this.buttonCancel.Location = new System.Drawing.Point(228, 192);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 2;
@@ -168,7 +169,7 @@
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(73, 192);
+            this.buttonOK.Location = new System.Drawing.Point(147, 192);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 3;
@@ -179,13 +180,12 @@
             // SettingsForm
             // 
             this.AcceptButton = this.buttonOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(315, 220);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonApply);
             this.Controls.Add(this.tabControl);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -215,8 +215,8 @@
         private System.Windows.Forms.Label labelSuggestions;
         private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.LinkLabel linkLabelGitHub;
-        private System.Windows.Forms.Button buttonApply;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.CheckBox checkBoxDarkMode;
     }
 }

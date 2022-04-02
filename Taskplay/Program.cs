@@ -8,6 +8,10 @@ namespace Taskplay
     {
         static bool _isMusicPlaying = false;    // Bool to keep in check if the user is playing music
 
+        static bool IsDarkModeOn => GetDarkModeState();
+
+        static readonly Action<bool> restartAction = (b) => Application.Restart();
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -33,19 +37,19 @@ namespace Taskplay
             contextMenu.MenuItems.Add(contextItemSettings);
             contextMenu.MenuItems.Add(contextItemExit);
             //Setup nextIcon
-            nextIcon.Icon = Properties.Resources.Forward;
+            nextIcon.Icon = IsDarkModeOn ? Properties.Resources.ForwardDark : Properties.Resources.Forward;
             nextIcon.Text = "Next";
             nextIcon.Visible = true;
             nextIcon.MouseClick += new MouseEventHandler(nextIcon_MouseClick);
             nextIcon.ContextMenu = contextMenu;
             //Setup playIcon
-            playIcon.Icon = Properties.Resources.Play;
+            playIcon.Icon = IsDarkModeOn ? Properties.Resources.PlayDark : Properties.Resources.Play;
             playIcon.Text = "Play / Pause";
             playIcon.Visible = true;
             playIcon.MouseClick += new MouseEventHandler(playIcon_MouseClick);
             playIcon.ContextMenu = contextMenu;
             //Setup previousIcon
-            previousIcon.Icon = Properties.Resources.Backward;
+            previousIcon.Icon = IsDarkModeOn ? Properties.Resources.BackwardDark : Properties.Resources.Backward;
             previousIcon.Text = "Previous";
             previousIcon.Visible = true;
             previousIcon.MouseClick += new MouseEventHandler(previousIcon_MouseClick);
@@ -79,13 +83,13 @@ namespace Taskplay
                 if (_isMusicPlaying == false)
                 {
                     // Start playing music and show the pause-icon
-                    playIcon.Icon = Properties.Resources.Pause;
+                    playIcon.Icon = IsDarkModeOn ? Properties.Resources.PauseDark : Properties.Resources.Pause;
                     _isMusicPlaying = true;
                 }
                 else
                 {
                     // Pause the music and display the Play-icon
-                    playIcon.Icon = Properties.Resources.Play;
+                    playIcon.Icon = IsDarkModeOn ? Properties.Resources.PlayDark : Properties.Resources.Play;
                     _isMusicPlaying = false;
                 }
             }
@@ -108,13 +112,29 @@ namespace Taskplay
         private static void contextMenuSettings_Click(object sender, System.EventArgs e)
         {
             //Show Settings form
-            new SettingsForm().ShowDialog();
+            var settingsForm = new SettingsForm(IsDarkModeOn, restartAction);
+            settingsForm.ShowDialog();
         }
 
         private static void contextMenuExit_Click(object sender, System.EventArgs e)
         {
             //Exit the app
             Application.Exit();
+        }
+
+        private static bool GetDarkModeState()
+        {
+            var subKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(@"SOFTWARE\Taskplay");
+
+            var keyValue = subKey.GetValue("DarkMode");
+
+            if (keyValue == null)
+            {
+                subKey.SetValue("DarkMode", 0);
+                return false;
+            }
+
+            return (int)keyValue == 1;
         }
 
         [DllImport("user32.dll", SetLastError = true)]
