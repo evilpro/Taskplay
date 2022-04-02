@@ -116,10 +116,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\Backward.ico" />
+    <Content Include="Icons\BackwardDark.ico" />
     <Content Include="Icons\Forward.ico" />
+    <Content Include="Icons\ForwardDark.ico" />
     <Content Include="Icons\Pause.ico" />
+    <Content Include="Icons\PauseDark.ico" />
     <Content Include="Icons\Play.ico" />
+    <Content Include="Icons\PlayDark.ico" />
     <Content Include="Icons\Stop.ico" />
+    <Content Include="Icons\StopDark.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

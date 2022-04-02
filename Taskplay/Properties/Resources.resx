@@ -133,4 +133,19 @@
   <data name="Stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\stop.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BackwardDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\BackwardDark.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ForwardDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\ForwardDark.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PauseDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\PauseDark.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\PlayDark.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StopDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\StopDark.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
