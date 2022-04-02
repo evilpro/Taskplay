@@ -41,6 +41,7 @@
             this.labelTaskplay = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
+            this.checkBoxShowSongChangeButtons = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // tabPageGeneral
             // 
+            this.tabPageGeneral.Controls.Add(this.checkBoxShowSongChangeButtons);
             this.tabPageGeneral.Controls.Add(this.checkBoxDarkMode);
             this.tabPageGeneral.Controls.Add(this.checkBoxAutorun);
             this.tabPageGeneral.Location = new System.Drawing.Point(4, 32);
@@ -177,6 +179,16 @@
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
+            // checkBoxShowSongChangeButtons
+            // 
+            this.checkBoxShowSongChangeButtons.AutoSize = true;
+            this.checkBoxShowSongChangeButtons.Location = new System.Drawing.Point(6, 72);
+            this.checkBoxShowSongChangeButtons.Name = "checkBoxShowSongChangeButtons";
+            this.checkBoxShowSongChangeButtons.Size = new System.Drawing.Size(259, 27);
+            this.checkBoxShowSongChangeButtons.TabIndex = 4;
+            this.checkBoxShowSongChangeButtons.Text = "Show song changing buttons";
+            this.checkBoxShowSongChangeButtons.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AcceptButton = this.buttonOK;
@@ -218,5 +230,6 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.CheckBox checkBoxDarkMode;
+        private System.Windows.Forms.CheckBox checkBoxShowSongChangeButtons;
     }
 }

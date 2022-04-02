@@ -8,7 +8,8 @@ namespace Taskplay
     {
         static bool _isMusicPlaying = false;    // Bool to keep in check if the user is playing music
 
-        static bool IsDarkModeOn => GetDarkModeState();
+        static bool IsDarkModeOn => GetSettingState("DarkMode");
+        static bool AreChangeSongButtonsShown => GetSettingState("ShowChangeSongButtons");
 
         static readonly Action<bool> restartAction = (b) => Application.Restart();
 
@@ -39,7 +40,7 @@ namespace Taskplay
             //Setup nextIcon
             nextIcon.Icon = IsDarkModeOn ? Properties.Resources.ForwardDark : Properties.Resources.Forward;
             nextIcon.Text = "Next";
-            nextIcon.Visible = true;
+            nextIcon.Visible = AreChangeSongButtonsShown;
             nextIcon.MouseClick += new MouseEventHandler(nextIcon_MouseClick);
             nextIcon.ContextMenu = contextMenu;
             //Setup playIcon
@@ -51,7 +52,7 @@ namespace Taskplay
             //Setup previousIcon
             previousIcon.Icon = IsDarkModeOn ? Properties.Resources.BackwardDark : Properties.Resources.Backward;
             previousIcon.Text = "Previous";
-            previousIcon.Visible = true;
+            previousIcon.Visible = AreChangeSongButtonsShown;
             previousIcon.MouseClick += new MouseEventHandler(previousIcon_MouseClick);
             previousIcon.ContextMenu = contextMenu;
 
@@ -112,7 +113,7 @@ namespace Taskplay
         private static void contextMenuSettings_Click(object sender, System.EventArgs e)
         {
             //Show Settings form
-            var settingsForm = new SettingsForm(IsDarkModeOn, restartAction);
+            var settingsForm = new SettingsForm(IsDarkModeOn, AreChangeSongButtonsShown, restartAction);
             settingsForm.ShowDialog();
         }
 
@@ -122,15 +123,15 @@ namespace Taskplay
             Application.Exit();
         }
 
-        private static bool GetDarkModeState()
+        private static bool GetSettingState(string settingName)
         {
             var subKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(@"SOFTWARE\Taskplay");
 
-            var keyValue = subKey.GetValue("DarkMode");
+            var keyValue = subKey.GetValue(settingName);
 
             if (keyValue == null)
             {
-                subKey.SetValue("DarkMode", 0);
+                subKey.SetValue(settingName, 0);
                 return false;
             }
 
